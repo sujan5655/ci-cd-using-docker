@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "5100:5600"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - PORT=5600
